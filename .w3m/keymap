@@ -1,0 +1,196 @@
+# A sample of ~/.w3m/keymap (default)
+#
+# Ctrl  : C-, ^
+# Escape: ESC-, M-, ^[
+# Space : SPC, ' '
+# Tab   : TAB, ^i, ^I
+# Delete: DEL, ^?
+# Up    : UP, ^[[A
+# Down  : DOWN, ^[[B
+# Right : RIGHT, ^[[C
+# Left  : LEFT, ^[[D
+
+# https://www.digital-experts.de/doc/w3m/MANUAL.html#Functions
+
+## In-page navigation
+#### move pages (shift up/down by ~50 lines)
+keymap  C-v  NEXT_PAGE
+keymap  +  NEXT_PAGE
+keymap  SPC  NEXT_PAGE
+keymap  M-[6~  NEXT_PAGE
+
+keymap  BCKSPC PREV_PAGE
+keymap  b  PREV_PAGE
+keymap  M-v  PREV_PAGE
+keymap  _  PREV_PAGE
+keymap  M-[5~  PREV_PAGE
+
+#### move cursor right/left/up/down
+keymap  C-f  MOVE_RIGHT
+keymap  l  MOVE_RIGHT
+keymap  RIGHT  MOVE_RIGHT
+
+#### undo/redo cursor move
+keymap  ( UNDO
+keymap  )  REDO
+
+keymap  C-b  MOVE_LEFT
+keymap  h  MOVE_LEFT
+keymap  LEFT  MOVE_LEFT
+
+keymap  C-p  MOVE_UP
+keymap  K  MOVE_UP
+keymap  UP  MOVE_UP
+
+keymap  C-n  MOVE_DOWN
+keymap  J  MOVE_DOWN
+keymap  DOWN  MOVE_DOWN
+
+#### scroll up/down/right/left
+keymap  j  UP
+keymap  k  DOWN
+keymap  >  SHIFT_RIGHT
+keymap  <  SHIFT_LEFT
+# shift screen one column
+keymap  ,  LEFT
+keymap  .  RIGHT
+# center page
+keymap  Z  CENTER_H
+keymap  z  CENTER_V
+
+#### jump to
+keymap  C-a  LINE_BEGIN
+keymap  \^  LINE_BEGIN
+keymap  C-e  LINE_END
+keymap  $  LINE_END
+
+keymap  w  NEXT_WORD
+keymap  W  PREV_WORD
+
+keymap  gg  BEGIN
+keymap  G  END
+
+keymap  M-g  GOTO_LINE
+keymap  C-g  LINE_INFO
+
+keymap  TAB  NEXT_LINK
+keymap  C-u  PREV_LINK
+keymap  M-TAB  PREV_LINK # shift tab
+keymap  M-[Z  PREV_LINK
+
+## Hyperlink Operations
+keymap  C-j  GOTO_LINK
+keymap  C-m  GOTO_LINK
+# show list of links in pop-up
+keymap  C-l  LIST_MENU
+# show list of links in new page
+keymap  M-l  LIST
+
+keymap  a  SAVE_LINK
+keymap  M-C-j  SAVE_LINK
+keymap  M-C-m  SAVE_LINK
+
+# show target address
+keymap  u  PEEK_LINK
+# show image address
+keymap  i  PEEK_IMG
+# show current address
+keymap  c  PEEK
+# show info about current doc
+keymap  =  INFO
+
+## History
+# show history in new page
+keymap  C-h  HISTORY
+# show history (pop-up buffer stack menu)
+keymap  s  SELECT_MENU
+# go back in history
+keymap  B   BACK
+# custom - go back/forward in history
+keymap  H   PREV
+keymap  L   NEXT
+
+## Navigate
+keymap  t  NEW_TAB # open a new tab (with current document)
+# open URL
+keymap  o  GOTO
+# view new file
+keymap  V  LOAD
+
+## Searches
+keymap  /  SEARCH
+keymap  BACKSPACE   SEARCH
+keymap  n  SEARCH_NEXT
+keymap  ?  SEARCH_BACK
+keymap  C-r  ISEARCH_BACK
+
+#### etc
+keymap  C-s  ISEARCH
+
+## tabs
+keymap  d  CLOSE_TAB # close the current tab
+keymap  O  TAB_LINK # follow current hyperlink in new tab
+
+## other
+keymap  C-@  MARK
+keymap  C-h  HELP
+keymap  I  VIEW_IMAGE
+
+keymap  C-k  COOKIE
+keymap  C-R  REDRAW
+keymap  C-w  WRAP_TOGGLE
+keymap  C-z  SUSPEND
+
+keymap  !  SHELL
+keymap  \"  REG_MARK
+keymap  "#"  PIPE_SHELL
+keymap  :  MARK_URL
+keymap  ";"  MARK_WORD
+keymap  @  READ_SHELL
+keymap  D  DOWNLOAD_LIST
+keymap  E  EDIT
+keymap  F  FRAME
+keymap  M  EXTERN
+keymap  N  SEARCH_PREV
+keymap  Q  EXIT
+keymap  R  RELOAD
+keymap  S  SAVE_SCREEN
+keymap  [  LINK_BEGIN
+keymap  ]  LINK_END
+keymap  m  MOUSE_TOGGLE
+keymap  C-o  OPTIONS
+keymap  q  QUIT
+keymap  r  VERSION
+keymap  v  VIEW
+keymap  {  PREV_TAB
+keymap  |  PIPE_BUF
+keymap  }  NEXT_TAB
+
+
+keymap  M-:  MARK_MID
+keymap  M-<  BEGIN
+keymap  M->  END
+keymap  M-I  SAVE_IMAGE
+keymap  M-M  EXTERN_LINK
+keymap  M-W  DICT_WORD_AT
+keymap  M-a  ADD_BOOKMARK
+keymap  M-b  BOOKMARK
+keymap  M-c  COMMAND
+keymap  M-e  EDIT_SCREEN
+keymap  M-k  DEFINE_KEY
+keymap  M-m  MOVE_LIST_MENU
+keymap  M-n  NEXT_MARK
+keymap  M-o  SET_OPTION
+keymap  M-p  PREV_MARK
+keymap  M-s  SAVE
+keymap  M-t  TAB_MENU
+keymap  M-u  GOTO_RELATIVE
+keymap  M-w  DICT_WORD
+
+keymap  M-[E  MENU
+keymap  M-[L  MENU
+
+keymap  M-[1~  BEGIN
+keymap  M-[2~  MENU
+keymap  M-[4~  END
+keymap  M-[28~  MENU

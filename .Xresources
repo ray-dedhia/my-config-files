@@ -1,0 +1,14 @@
+! use a truetype font and size
+xterm*faceName: Monospace
+xterm*faceSize: 14
+! enable clipboard access
+xterm*selectToClipboard: true
+! use ctrl+shift+c and ctrl+shift+v to copy and paste
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+! set terminal size and position when launched
+xterm*geometry: 70x30+10+10
+! change colors
+xterm*background: black
+xterm*foreground: white
