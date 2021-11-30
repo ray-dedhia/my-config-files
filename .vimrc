@@ -50,7 +50,7 @@ command F setlocal foldenable
 command NF setlocal nofoldenable
 
 " set folding method based on file type
-au FileType tex,latex,vim setlocal foldmethod=marker
+au FileType tex,latex,vim,sh setlocal foldmethod=marker
 
 function! MarkdownLevel()
     if getline(v:lnum) =~ '^# .*$'
@@ -77,18 +77,25 @@ endfunction
 au FileType markdown,text setlocal foldexpr=MarkdownLevel() | setlocal foldmethod=expr
 
 
+""" Plugins {{{1
+call plug#begin('~/.vim/autoload/')
+
+" enable neoclide
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
 """ Colors {{{1
+
+" enable syntax highlighting
+syntax on
+command SS set spell
+command SNS set nospell
 
 " enable spellcheck
 syntax on
 set spell
 command SP set spell
 command NS set nospell
-
-" enable syntax highlighting
-syntax on
-command SS set spell
-command SNS set nospell
 
 " change visual display
 hi Visual guifg=#000000 guibg=#FFFFFF gui=none term=reverse cterm=reverse
