@@ -27,11 +27,11 @@ set linebreak
 " compile .tex files on save
 au BufWritePost *.tex silent! execute "! pdflatex % > /dev/null 2>&1 &" | redraw! 
 
-" compile .md files on compile
+" save and compile .md files to PDF
 command MC w | silent! execute "! pandoc % -o %:r.'pdf' > /dev/null 2>&1 &" | redraw!
 
 
-"" Dictionary Commands {{{1
+""" Dictionary Commands {{{1
 
 " set dictionary based on file type
 au FileType * execute 'setlocal dict+=/home/rdedhia/.vim/dicts/'.&filetype.'-words.txt' 
@@ -87,19 +87,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 """ Colors {{{1
 
 " enable syntax highlighting
+filetype plugin indent on
 syntax on
-command SS set spell
-command SNS set nospell
 
 " enable spellcheck
-syntax on
 set spell
 command SP set spell
 command NS set nospell
 
 " change visual display
-hi Visual guifg=#000000 guibg=#FFFFFF gui=none term=reverse cterm=reverse
-highlight Normal ctermfg=Brown
+au ColorScheme * hi Visual guifg=#000000 guibg=#FFFFFF gui=none term=reverse cterm=reverse
+au ColorScheme * hi Search cterm=none ctermfg=black ctermbg=white
 
 " change error highlighting
 au ColorScheme * hi Error NONE
@@ -118,10 +116,11 @@ au ColorScheme * hi SpellBad cterm=underline ctermfg=red
 command BRO highlight Normal ctermfg=Brown
 command GRA highlight Normal ctermfg=Gray
 command WHI highlight Normal ctermfg=White
+command C noh 
 
 " change colorscheme
-" colorschemes: default, desert, elflord, industry, slate, torte
-colorscheme elflord
+" colorschemes: default, desert, industry, koehler, slate, torte
+colorscheme koehler
 
 
 """ Relevant Links {{{1
