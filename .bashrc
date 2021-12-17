@@ -121,6 +121,7 @@ fi
 
 # My Alias Definitions {{{1
 ## frequently used
+alias cdh='cd ~'
 alias rds='redshift -t 3000K:3000K -l 42:71'
 alias pg='ping google.com'
 alias ofpg='nmcli radio wifi off; nmcli radio wifi on; ping google.com'
@@ -137,6 +138,7 @@ alias pip=pip3
 
 ## browser shortcuts
 alias wm='w3m duck.com'
+alias wgetua='wget --header="Accept: text/html" --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0"'
 
 ## clipboard shortcuts
 alias csel='xclip -selection clipboard'
@@ -170,6 +172,19 @@ alias bt.on='sudo /etc/init.d/bluetooth start'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
+
+## anki
+export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
+
+## open new terminal tab in same window
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+}
+
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi
 
 ## anaconda
 c() {
