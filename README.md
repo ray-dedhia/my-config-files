@@ -7,3 +7,4 @@
 - .Xresources (config params for X client apps)
 - elinks.conf (elinks config file)
 - .Xmodmap (modifies keymaps and pointer button mappings in Xorg)
+- userContent.css (for mozilla firefox)

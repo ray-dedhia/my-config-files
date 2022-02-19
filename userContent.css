@@ -1,0 +1,21 @@
+/* ~/.mozilla/firefox/<PROFILE_FOLDER>/chrome/userContent.css */
+@-moz-document url-prefix("about:reader") {
+  body.dark {
+    color: beige !important;
+    background-color: #444 !important;
+  }
+  body.light {
+    color: #222 !important;
+    background-color: #EEE !important;
+  }
+  body.sepia {
+    color: #5B4636 !important;
+    background-color: #F4ECD8 !important;
+  }
+  body.serif {
+    font-family: serif !important;
+  }
+  body.sans-serif {
+    font-family: sans-serif !important;
+  }
+}

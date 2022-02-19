@@ -168,6 +168,8 @@ alias bt.off='sudo /etc/init.d/bluetooth stop'
 alias bt.on='sudo /etc/init.d/bluetooth start'
 
 ## school
+source ~/.profile
+
 ## mattermost
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -185,6 +187,8 @@ function cd {
 if [ -f ~/.last_dir ]
     then cd `cat ~/.last_dir`
 fi
+
+# Other {{{1
 
 ## anaconda
 c() {

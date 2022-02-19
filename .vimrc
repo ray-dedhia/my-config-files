@@ -28,7 +28,7 @@ set linebreak
 au BufWritePost *.tex silent! execute "! pdflatex % > /dev/null 2>&1 &" | redraw! 
 
 " save and compile .md files to PDF
-command MC w | silent! execute "! pandoc % -o %:r.'pdf' > /dev/null 2>&1 &" | redraw!
+command MC w | silent! execute "! pandoc % -o %:r.'pdf' --toc > /dev/null 2>&1 &" | redraw!
 
 
 """ Dictionary Commands {{{1
@@ -38,6 +38,9 @@ au FileType * execute 'setlocal dict+=/home/rdedhia/.vim/dicts/'.&filetype.'-wor
 
 " add dictionary completion with ctrl+n
 set complete+=k
+
+" ignore CamelCase words when spell checking
+set spellcapcheck=
 
 
 """ Folding {{{1
