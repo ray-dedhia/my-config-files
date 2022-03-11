@@ -8,3 +8,4 @@
 - elinks.conf (elinks config file)
 - .Xmodmap (modifies keymaps and pointer button mappings in Xorg)
 - userContent.css (for mozilla firefox)
+- dunstrc (config file for dunst)
