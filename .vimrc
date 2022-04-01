@@ -28,7 +28,8 @@ set linebreak
 au BufWritePost *.tex silent! execute "! pdflatex % > /dev/null 2>&1 &" | redraw! 
 
 " save and compile .md files to PDF
-command MC w | silent! execute "! pandoc % -o %:r.'pdf' --toc > /dev/null 2>&1 &" | redraw!
+command MC w | silent! execute "! pandoc % -o %:r.'pdf' > /dev/null 2>&1 &" | redraw!
+command MCT w | silent! execute "! pandoc % -o %:r.'pdf' --toc > /dev/null 2>&1 &" | redraw!
 
 
 """ Dictionary Commands {{{1
@@ -81,10 +82,10 @@ au FileType markdown,text setlocal foldexpr=MarkdownLevel() | setlocal foldmetho
 
 
 """ Plugins {{{1
-call plug#begin('~/.vim/autoload/')
+"call plug#begin('~/.vim/autoload/')
 
 " enable neoclide
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 """ Colors {{{1
@@ -122,9 +123,29 @@ command WHI highlight Normal ctermfg=White
 command C noh 
 
 " change colorscheme
-" colorschemes: default, desert, industry, koehler, slate, torte
-colorscheme koehler
+" - dark gray background: default, delek, elflord, peachpuff, ron, zellner
+" - black background: industry, murphy
+colorscheme zellner
 
+" terminal colors: 
+" black=#000000, dark gray=#4C4C4C, red=#DD5555, light red=#FF9999, 
+" green=#90DA90, light green=#C5FFC5, brown/yellow=#DDBB00, yellow=#FFFF55, 
+" blue=#4466FF, light blue=#8DC3FF, magenta=#AA00AA, light magenta=#FFC0FF,
+" cyan=#55BBBB, light cyan=#A1FFFF, light gray=#AAAAAA, white=#FFFFFF
+
+""" Mappings {{{1
+
+function! Encode()
+    let inds=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    let from="abcdefghijklmnopqrstuvwxyz"
+    let to="ERYDQBXZIPAFGMKOCWVNUTSLJH"
+    for i in inds
+        execute 'imap '.from[i].' '.to[i]
+    endfor
+endfunction
+
+command ME call Encode()
+command NM imapclear
 
 """ Relevant Links {{{1
 
