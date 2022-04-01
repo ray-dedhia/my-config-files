@@ -125,12 +125,12 @@ command C noh
 " change colorscheme
 " - dark gray background: default, delek, elflord, peachpuff, ron, zellner
 " - black background: industry, murphy
-colorscheme zellner
+colorscheme delek
 
 " terminal colors: 
-" black=#000000, dark gray=#4C4C4C, red=#DD5555, light red=#FF9999, 
+" black=#000000, dark gray=#4C4C4C, red=#FF5555, light red=#FF9999, 
 " green=#90DA90, light green=#C5FFC5, brown/yellow=#DDBB00, yellow=#FFFF55, 
-" blue=#4466FF, light blue=#8DC3FF, magenta=#AA00AA, light magenta=#FFC0FF,
+" blue=#4466FF, light blue=#8DC3FF, magenta=#DD00DD, light magenta=#FFC0FF,
 " cyan=#55BBBB, light cyan=#A1FFFF, light gray=#AAAAAA, white=#FFFFFF
 
 """ Mappings {{{1
