@@ -13,7 +13,7 @@
 # https://www.digital-experts.de/doc/w3m/MANUAL.html#Functions
 
 ## In-page navigation
-#### move pages (shift up/down by ~50 lines)
+#### Move pages (shift up/down by ~50 lines)
 keymap  C-v  NEXT_PAGE
 keymap  +  NEXT_PAGE
 keymap  SPC  NEXT_PAGE
@@ -25,40 +25,32 @@ keymap  M-v  PREV_PAGE
 keymap  _  PREV_PAGE
 keymap  M-[5~  PREV_PAGE
 
-#### move cursor right/left/up/down
-keymap  C-f  MOVE_RIGHT
-keymap  l  MOVE_RIGHT
+#### Move cursor right/left/up/down
 keymap  RIGHT  MOVE_RIGHT
-
-#### undo/redo cursor move
-keymap  ( UNDO
-keymap  )  REDO
-
-keymap  C-b  MOVE_LEFT
-keymap  h  MOVE_LEFT
 keymap  LEFT  MOVE_LEFT
 
-keymap  C-p  MOVE_UP
 keymap  K  MOVE_UP
 keymap  UP  MOVE_UP
 
-keymap  C-n  MOVE_DOWN
 keymap  J  MOVE_DOWN
 keymap  DOWN  MOVE_DOWN
 
-#### scroll up/down/right/left
+#### Undo/redo cursor move
+keymap  ( UNDO
+keymap  )  REDO
+
+#### Scroll up/down/right/left
 keymap  j  UP
 keymap  k  DOWN
-keymap  >  SHIFT_RIGHT
-keymap  <  SHIFT_LEFT
-# shift screen one column
-keymap  ,  LEFT
-keymap  .  RIGHT
+keymap  >  RIGHT 
+keymap  <  LEFT 
+keymap  l  SHIFT_RIGHT
+keymap  h  SHIFT_LEFT
 # center page
 keymap  Z  CENTER_H
 keymap  z  CENTER_V
 
-#### jump to
+#### Jump to
 keymap  C-a  LINE_BEGIN
 keymap  \^  LINE_BEGIN
 keymap  C-e  LINE_END
@@ -123,17 +115,19 @@ keymap  BACKSPACE   SEARCH
 keymap  n  SEARCH_NEXT
 keymap  ?  SEARCH_BACK
 keymap  C-r  ISEARCH_BACK
-
-#### etc
 keymap  C-s  ISEARCH
 
-## tabs
+## Tabs
 keymap  d  CLOSE_TAB # close the current tab
 keymap  O  TAB_LINK # follow current hyperlink in new tab
 
-## other
+## Copy
+keymap  yy  EXTERN  'printf %s | xsel -b'
+keymap  YY  EXTERN_LINK  'printf %s | xsel -b'
+
+## Other
 keymap  C-@  MARK
-keymap  C-h  HELP
+keymap  M-h  HELP
 keymap  I  VIEW_IMAGE
 
 keymap  C-k  COOKIE
