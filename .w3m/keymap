@@ -26,8 +26,11 @@ keymap  _  PREV_PAGE
 keymap  M-[5~  PREV_PAGE
 
 #### Move cursor right/left/up/down
-keymap  RIGHT  MOVE_RIGHT
+keymap  h  MOVE_LEFT
 keymap  LEFT  MOVE_LEFT
+
+keymap  l  MOVE_RIGHT
+keymap  RIGHT  MOVE_RIGHT
 
 keymap  K  MOVE_UP
 keymap  UP  MOVE_UP
@@ -42,15 +45,15 @@ keymap  )  REDO
 #### Scroll up/down/right/left
 keymap  j  UP
 keymap  k  DOWN
-keymap  >  RIGHT 
-keymap  <  LEFT 
-keymap  l  SHIFT_RIGHT
-keymap  h  SHIFT_LEFT
-# center page
-keymap  Z  CENTER_H
-keymap  z  CENTER_V
+keymap  .  LEFT 
+keymap  ,  RIGHT 
+keymap  <  SHIFT_LEFT
+keymap  >  SHIFT_RIGHT
+keymap  Z  CENTER_H # center page horizontally
+keymap  z  CENTER_V # center page vertically
 
 #### Jump to
+keymap  0  LINE_BEGIN
 keymap  C-a  LINE_BEGIN
 keymap  \^  LINE_BEGIN
 keymap  C-e  LINE_END
@@ -71,54 +74,44 @@ keymap  M-TAB  PREV_LINK # shift tab
 keymap  M-[Z  PREV_LINK
 
 ## Hyperlink Operations
-keymap  C-j  GOTO_LINK
+keymap  C-i  GOTO_LINK
 keymap  C-m  GOTO_LINK
-# show list of links in pop-up
-keymap  C-l  LIST_MENU
-# show list of links in new page
-keymap  M-l  LIST
+keymap  C-l  LIST_MENU # show list of links in pop-up
+keymap  M-l  LIST # show list of links in new page
 
 keymap  a  SAVE_LINK
 keymap  M-C-j  SAVE_LINK
 keymap  M-C-m  SAVE_LINK
 
-# show target address
-keymap  u  PEEK_LINK
-# show image address
-keymap  i  PEEK_IMG
-# show current address
-keymap  c  PEEK
-# show info about current doc
-keymap  =  INFO
+keymap  u  PEEK_LINK # show target address
+keymap  i  PEEK_IMG # show image address
+keymap  c  PEEK # show current address
+keymap  =  INFO # show info about current doc
 
 ## History
-# show history in new page
-keymap  C-h  HISTORY
-# show history (pop-up buffer stack menu)
-keymap  s  SELECT_MENU
-# go back in history
-keymap  B   BACK
-# custom - go back/forward in history
-keymap  H   PREV
-keymap  L   NEXT
+keymap  C-h  HISTORY # show history in new page
+keymap  s  SELECT_MENU # show history in pop-up buffer stack menu
+keymap  B   BACK # go back in history
+keymap  H   PREV # go back in history
+keymap  L   NEXT # go forward in history
 
 ## Navigate
 keymap  t  NEW_TAB # open a new tab (with current document)
-# open URL
-keymap  o  GOTO
-# view new file
-keymap  V  LOAD
+keymap  o  GOTO # open URL
+keymap  V  LOAD # view new file
 
 ## Searches
 keymap  /  SEARCH
 keymap  BACKSPACE   SEARCH
 keymap  n  SEARCH_NEXT
 keymap  ?  SEARCH_BACK
+keymap  N  SEARCH_PREV
 keymap  C-r  ISEARCH_BACK
 keymap  C-s  ISEARCH
 
 ## Tabs
 keymap  d  CLOSE_TAB # close the current tab
+keymap  x  CLOSE_TAB # close the current tab
 keymap  O  TAB_LINK # follow current hyperlink in new tab
 
 ## Copy
@@ -130,7 +123,7 @@ keymap  C-@  MARK
 keymap  M-h  HELP
 keymap  I  VIEW_IMAGE
 
-keymap  C-k  COOKIE
+keymap  C-c  COOKIE
 keymap  C-R  REDRAW
 keymap  C-w  WRAP_TOGGLE
 keymap  C-z  SUSPEND
@@ -145,7 +138,6 @@ keymap  D  DOWNLOAD_LIST
 keymap  E  EDIT
 keymap  F  FRAME
 keymap  M  EXTERN
-keymap  N  SEARCH_PREV
 keymap  Q  EXIT
 keymap  R  RELOAD
 keymap  S  SAVE_SCREEN
