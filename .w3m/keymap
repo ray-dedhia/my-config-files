@@ -14,22 +14,17 @@
 
 ## In-page navigation
 #### Move pages (shift up/down by ~50 lines)
-keymap  C-v  NEXT_PAGE
-keymap  +  NEXT_PAGE
 keymap  SPC  NEXT_PAGE
-keymap  M-[6~  NEXT_PAGE
+keymap  f  NEXT_PAGE
 
 keymap  BCKSPC PREV_PAGE
 keymap  b  PREV_PAGE
-keymap  M-v  PREV_PAGE
-keymap  _  PREV_PAGE
-keymap  M-[5~  PREV_PAGE
 
 #### Move cursor right/left/up/down
-keymap  h  MOVE_LEFT
+keymap  ,  MOVE_LEFT
 keymap  LEFT  MOVE_LEFT
 
-keymap  l  MOVE_RIGHT
+keymap  .  MOVE_RIGHT
 keymap  RIGHT  MOVE_RIGHT
 
 keymap  K  MOVE_UP
@@ -45,17 +40,16 @@ keymap  )  REDO
 #### Scroll up/down/right/left
 keymap  j  UP
 keymap  k  DOWN
-keymap  .  LEFT 
-keymap  ,  RIGHT 
-keymap  <  SHIFT_LEFT
-keymap  >  SHIFT_RIGHT
+keymap  <  LEFT 
+keymap  >  RIGHT 
+keymap  h  SHIFT_LEFT
+keymap  l  SHIFT_RIGHT
 keymap  Z  CENTER_H # center page horizontally
 keymap  z  CENTER_V # center page vertically
 
 #### Jump to
 keymap  0  LINE_BEGIN
 keymap  C-a  LINE_BEGIN
-keymap  \^  LINE_BEGIN
 keymap  C-e  LINE_END
 keymap  $  LINE_END
 
@@ -69,18 +63,14 @@ keymap  M-g  GOTO_LINE
 keymap  C-g  LINE_INFO
 
 keymap  TAB  NEXT_LINK
-keymap  C-u  PREV_LINK
 keymap  M-TAB  PREV_LINK # shift tab
-keymap  M-[Z  PREV_LINK
 
 ## Hyperlink Operations
-keymap  C-i  GOTO_LINK
 keymap  C-m  GOTO_LINK
 keymap  C-l  LIST_MENU # show list of links in pop-up
 keymap  M-l  LIST # show list of links in new page
 
 keymap  a  SAVE_LINK
-keymap  M-C-j  SAVE_LINK
 keymap  M-C-m  SAVE_LINK
 
 keymap  u  PEEK_LINK # show target address
@@ -102,9 +92,8 @@ keymap  V  LOAD # view new file
 
 ## Searches
 keymap  /  SEARCH
-keymap  BACKSPACE   SEARCH
-keymap  n  SEARCH_NEXT
 keymap  ?  SEARCH_BACK
+keymap  n  SEARCH_NEXT
 keymap  N  SEARCH_PREV
 keymap  C-r  ISEARCH_BACK
 keymap  C-s  ISEARCH
@@ -151,7 +140,6 @@ keymap  v  VIEW
 keymap  {  PREV_TAB
 keymap  |  PIPE_BUF
 keymap  }  NEXT_TAB
-
 
 keymap  M-:  MARK_MID
 keymap  M-<  BEGIN
