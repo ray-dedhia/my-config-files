@@ -47,6 +47,19 @@ keymap  l  SHIFT_RIGHT
 keymap  Z  CENTER_H # center page horizontally
 keymap  z  CENTER_V # center page vertically
 
+## Hyperlink Operations
+keymap  C-m  GOTO_LINK
+keymap  C-l  LIST_MENU # show list of links in pop-up
+keymap  M-l  LIST # show list of links in new page
+
+keymap  a  SAVE_LINK
+keymap  M-C-m  SAVE_LINK
+
+keymap  u  PEEK_LINK # show target address
+keymap  i  PEEK_IMG # show image address
+keymap  c  PEEK # show current address
+keymap  =  INFO # show info about current doc
+
 #### Jump to
 keymap  0  LINE_BEGIN
 keymap  C-a  LINE_BEGIN
@@ -64,19 +77,6 @@ keymap  C-g  LINE_INFO
 
 keymap  TAB  NEXT_LINK
 keymap  M-TAB  PREV_LINK # shift tab
-
-## Hyperlink Operations
-keymap  C-m  GOTO_LINK
-keymap  C-l  LIST_MENU # show list of links in pop-up
-keymap  M-l  LIST # show list of links in new page
-
-keymap  a  SAVE_LINK
-keymap  M-C-m  SAVE_LINK
-
-keymap  u  PEEK_LINK # show target address
-keymap  i  PEEK_IMG # show image address
-keymap  c  PEEK # show current address
-keymap  =  INFO # show info about current doc
 
 ## History
 keymap  C-h  HISTORY # show history in new page
