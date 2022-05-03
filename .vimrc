@@ -23,6 +23,10 @@ command FOUR set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " keep indent on line break
 set autoindent 
+" toggle paste mode (turn on before pasting, then turn back off)
+set pastetoggle=<F3>
+command P set paste
+command NP set nopaste
 
 " word wrap while preserving list indentation
 set breakindent
