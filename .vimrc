@@ -9,10 +9,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'preservim/vim-markdown'
 call vundle#end()
-filetype plugin indent on
 
 """ Indenting {{{1
 
@@ -38,11 +35,6 @@ command LIS set breakindent
 
 " don't split a word at the end of a line
 set linebreak
-
-" add tab in insert mode
-inoremap <C-l> <Esc>>>$a<Space>
-inoremap <C-h> <Esc><<$a<Space>
-inoremap <C-k> <Esc>0d$a
 
 
 """ Compile Commands {{{1
@@ -75,22 +67,40 @@ set foldenable
 " shortcuts to enable or disable folding
 command F setlocal foldenable
 command NF setlocal nofoldenable
-" markdown TOC shortcuts
-command Notoc lclose
 
 " set folding method based on file type
 au FileType tex,latex,vim,sh setlocal foldmethod=marker
 
 " markdown folding
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_folding_level = 0
-let g:vim_markdown_toc_autofit = 1
+function! MarkdownLevel()
+    if getline(v:lnum) =~ '^# .*$'
+        return ">1"
+    endif
+    if getline(v:lnum) =~ '^## .*$'
+        return ">2"
+    endif
+    if getline(v:lnum) =~ '^### .*$'
+        return ">3"
+    endif
+    if getline(v:lnum) =~ '^#### .*$'
+        return ">4"
+    endif
+    if getline(v:lnum) =~ '^##### .*$'
+        return ">5"
+    endif
+    if getline(v:lnum) =~ '^###### .*$'
+        return ">6"
+    endif
+    return "="
+endfunction
+
+au FileType markdown,text setlocal foldexpr=MarkdownLevel() | setlocal foldmethod=expr
 
 
 """ Colors {{{1
 
 " enable syntax highlighting
-"filetype plugin indent on
+filetype plugin indent on
 syntax on
 
 " open specific files with specific syntax highlighting
@@ -131,11 +141,6 @@ colorscheme delek
 
 
 """ Fix Issues {{{1
-
-" fix indent issue with vim-markdown plugin
-" https://github.com/preservim/vim-markdown/issues/126
-au filetype markdown set formatoptions+=ro
-au filetype markdown set comments=b:*,b:-,b:+,b:1.,n:>
 
 " handle latex blocks
 syn region math start=/\$\$/ end=/\$\$/
