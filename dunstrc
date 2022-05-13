@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 10
+    font = Monospace 11
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -19,7 +19,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    #format = "<i>%s</i>\n%b"
+    format = "<b>%a</b> - <i>%s</i>\n%b"
 
     # Sort messages by urgency
     sort = no
@@ -48,18 +48,34 @@
     ignore_newline = no
 
 
-    # the geometry of the window
-    # geometry [{width}]x{height}][+/-{x}+/-{y}]
-    # The geometry of the message window.
-    # The height is measured in number of notifications everything else in pixels. If the width
-    # is omitted but the height is given ("-geometry x2"), the message window
-    # expands over the whole screen (dmenu-like). If width is 0,
-    # the window expands to the longest message displayed.
-    # A positive x is measured from the left, a negative from the
-    # right side of the screen.  Y is measured from the top and down respectively.
-    # The width can be negative. In this case the actual width is the
-    # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    # width = The width of the notification window in pixels. This can be a 
+    # single number to specify a constant width or two numbers for the minimum 
+    # and maximum width. The notification will expand from the minimum width as
+    # necessary. Examples: width = 300 is a constant width of 300, and width = 
+    # (0, 300) is a width between 0 and 300. When setting a width bigger than 
+    # the screen, dunst will clamp the width to the screen width. So if you want 
+    # the notification to stretch the entire screen dynamically, you may set the 
+    # width to a high enough number, which none of your screens exceed (e.g. 10000)
+    width = 600
+
+    # height = The maximum height of a single notification.
+
+    # notification_limit (default: 0) = The number of notifications that can appear 
+    # at one time. When this limit is reached any additional notifications will be
+    # queued and displayed when the currently displayed ones either time out or are 
+    # manually dismissed. The value 0 means no limit. If indicate_hidden is true, then 
+    # the specified limit is reduced by 1 and the last notification is a message
+    # informing how many hidden notifications are waiting to be displayed. See the
+    # indicate_hidden entry for more information.
+
+    # origin (default: top-right) = The origin of the notification window on the 
+    # screen. It can then be moved with offset. Origin can be one of: top-left 
+    # top-center top-right bottom-left bottom-center bottom-right left-center 
+    # center right-center. offset format: (horizontal, vertical). Respectively 
+    # the horizontal and vertical offset in pixels from the corner of the screen 
+    # specified by origin. A negative offset will lead to the notification being off 
+    # screen. Examples: origin = top-right offset = 10x300 = a margin of 10 pixels 
+    # from the right and 300 pixels from the top.
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -151,17 +167,17 @@
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#444444"
     foreground = "#ffcc99"
-    timeout = 3
+    timeout = 5
 
 [urgency_normal]
     background = "#444444"
     foreground = "#ffcc99"
-    timeout = 5
+    timeout = 10 
 
 [urgency_critical]
     background = "#444444"
     foreground = "#ffcc99"
-    timeout = 7
+    timeout = 15
 
 
 # Every section that isn't one of the above is interpreted as a rules
@@ -188,5 +204,5 @@
    summary = "Dropbox"
    format = ""
 
-[log]
-   script = ~/Notifications/log.sh
+[all]
+   script = /home/rd/Notifications/notify_and_log.sh
